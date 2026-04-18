@@ -4,7 +4,7 @@
 #include <algorithm>
 #include <iomanip>
 using namespace std;
-// Функция для вычисления медианы строки [cite: 135]
+// Функция для вычисления медианы строки
 double calculateMedian(vector<double> row) {
     if (row.empty()) return 0;
     // Для нахождения медианы массив должен быть отсортирован 
@@ -20,7 +20,7 @@ double calculateMedian(vector<double> row) {
     }
 }
 int main() {
-    // Установка локали для корректного отображения кириллицы [cite: 484]
+    // Установка локали для корректного отображения кириллицы
     setlocale(LC_ALL, "Russian");
     int M, N;
     cout << "=== Задание 12.1.1 (Вариант 7) ===" << endl;
@@ -32,7 +32,7 @@ int main() {
         cout << "Ошибка: размеры должны быть положительными числами." << endl;
         return 1;
     }
-    // Создание двумерной структуры данных (вектора векторов) [cite: 501]
+    // Создание двумерной структуры данных (вектора векторов)
     vector<vector<double>> matrix(M, vector<double>(N));
     // РУЧНОЙ ВВОД ДАННЫХ ПОЛЬЗОВАТЕЛЕМ 
     cout << "\nЗаполнение матрицы значениями:" << endl;
@@ -51,10 +51,10 @@ int main() {
         double median = calculateMedian(matrix[i]);
         medianMap[median] = i;
     }
-    // ВЫВОД РЕЗУЛЬТАТОВ [cite: 587]
+    // ВЫВОД РЕЗУЛЬТАТОВ
     cout << "\n=== РЕЗУЛЬТАТ (отсортировано по медиане) ===" << endl;
-    cout << fixed << setprecision(2); // Форматирование вывода [cite: 598]
-    // Использование итератора для обхода map [cite: 587]
+    cout << fixed << setprecision(2); // Форматирование вывода
+    // Использование итератора для обхода map
     map<double, int>::const_iterator it;
     for (it = medianMap.begin(); it != medianMap.end(); ++it) {
         cout << "Медиана: " << setw(8) << it->first
